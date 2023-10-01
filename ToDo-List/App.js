@@ -1,39 +1,50 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, TouchableOpacity, View, FlatList } from 'react-native';
+import React from 'react';
+import { StyleSheet, Text, TouchableOpacity, View, FlatList, Modal } from 'react-native';
 import { AntDesign } from '@expo/vector-icons';
 import colors from './Colors';
 import tempData from './tempData';
 import TodoList from './components/ToDoList';
+import AddListModal from './components/AddListModal';
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <View style={{ flexDirection: 'row' }}>
-        <View style={styles.divider} />
-        <Text style={styles.title}>
-          Todo <Text style={{ fontWeight: '300', color: colors.blue}}>Lists</Text>
-        </Text>
-        <View style={styles.divider} />
-      </View>
+export default class App extends React.Component {
+  state ={ addTodoVisible: true }
+  toggleAddTodoModal() {
+    this.setState({ addTodoVisible: !this.state.addTodoVisible });
+  }
 
-      <View style={{ marginVertical: 48 }}>
-        <TouchableOpacity style={styles.addList}>
-          <AntDesign name='plus' size={16} color={colors.blue} />
-        </TouchableOpacity>
-        <Text style={styles.add}>Add List</Text>
+  render() {
+    return (
+      <View style={styles.container}>
+        <Modal animationType='slide' visible={this.state.addTodoVisible} onRequestClose={() => this.toggleAddTodoModal()}>
+          <AddListModal closeModal={() => this.toggleAddTodoModal()} />
+        </Modal>
+        <View style={{ flexDirection: 'row' }}>
+          <View style={styles.divider} />
+          <Text style={styles.title}>
+            Todo <Text style={{ fontWeight: '300', color: colors.blue}}>Lists</Text>
+          </Text>
+          <View style={styles.divider} />
+        </View>
+  
+        <View style={{ marginVertical: 48 }}>
+          <TouchableOpacity style={styles.addList} onPress={() => this.toggleAddTodoModal()}>
+            <AntDesign name='plus' size={16} color={colors.blue} />
+          </TouchableOpacity>
+          <Text style={styles.add}>Add List</Text>
+        </View>
+  
+        <View style={{ height: 275, paddingLeft: 32}}>
+          <FlatList 
+            data={tempData}
+            keyExtractor={item => item.name}
+            horizontal={true}
+            showsHorizontalScrollIndicator={false}
+            renderItem={({ item }) => <TodoList list={item} />}
+          />
+        </View>
       </View>
-
-      <View style={{ height: 275, paddingLeft: 32}}>
-        <FlatList 
-          data={tempData}
-          keyExtractor={item => item.name}
-          horizontal={true}
-          showsHorizontalScrollIndicator={false}
-          renderItem={({ item }) => <TodoList list={item} />}
-        />
-      </View>
-    </View>
-  );
+    );
+  }
 }
 
 const styles = StyleSheet.create({
