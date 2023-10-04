@@ -18,7 +18,7 @@ export default class ToDoList extends React.Component {
                 <Modal animationType="slide" 
                     visible={this.state.showListVisible} onRequestClose={() => this.toggleListModel}
                 >
-                    <TodoModal list={list} closeModal={() => this.toggleListModel()} />
+                    <TodoModal list={list} closeModal={() => this.toggleListModel()} updateList={this.props.updateList} />
                 </Modal>
                 <TouchableOpacity style={[styles.listContainer, { backgroundColor: list.color}]}
                     onPress={() => this.toggleListModel()}
