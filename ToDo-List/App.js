@@ -1,11 +1,12 @@
 import React from 'react';
-import { StyleSheet, Text, TouchableOpacity, View, FlatList, Modal, ActivityIndicator } from 'react-native';
+import { StyleSheet, Text, TouchableOpacity, View, FlatList, Modal, ActivityIndicator, ImageBackground } from 'react-native';
 import { AntDesign } from '@expo/vector-icons';
 import colors from './Colors';
 import TodoList from './components/ToDoList';
 import AddListModal from './components/AddListModal';
 import Fire from './Fire';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
+import { LinearGradient } from 'expo-linear-gradient';
 
 export default class App extends React.Component {
   state ={ 
@@ -59,7 +60,7 @@ export default class App extends React.Component {
       )
     }
     return (
-      <GestureHandlerRootView style={{flex:1}}>
+      <ImageBackground source={require('./img/back.jpeg')} resizeMode='cover' style={styles.image}> 
         <View style={styles.container}> 
 
           <Modal animationType='slide' visible={this.state.addTodoVisible} onRequestClose={() => this.toggleAddTodoModal()}>
@@ -69,7 +70,7 @@ export default class App extends React.Component {
           <View style={{ flexDirection: 'row' }}>
             <View style={styles.divider} />
             <Text style={styles.title}>
-              Todo <Text style={{ fontWeight: '300', color: colors.blue}}>Lists</Text>
+              Todo <Text style={{ fontWeight: '500', color: colors.blue}}>Lists</Text>
             </Text>
             <View style={styles.divider} />
           </View>
@@ -91,9 +92,8 @@ export default class App extends React.Component {
               keyboardShouldPersistTaps='always'
             />
           </View>
-
         </View>
-      </GestureHandlerRootView>
+      </ImageBackground>
     );
   }
 }
@@ -101,12 +101,15 @@ export default class App extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
   },
+  image: {
+    flex: 1,
+    justifyContent: 'center',
+  },
   divider: {
-    backgroundColor: colors.lightBlue,
+    backgroundColor: colors.blue,
     height: 1,
     flex: 1,
     alignSelf: 'center',
@@ -118,8 +121,8 @@ const styles = StyleSheet.create({
     paddingHorizontal: 64,
   },
   addList: {
-    borderWidth: 2,
-    borderColor: colors.lightBlue,
+    borderWidth: 3,
+    borderColor: colors.blue,
     borderRadius: 4,
     padding: 16,
     alignItems: 'center',
@@ -128,7 +131,7 @@ const styles = StyleSheet.create({
   add: {
     color: colors.blue,
     fontWeight: '600',
-    fontSize: 14,
+    fontSize: 16,
     marginTop: 8,
   },
 });
