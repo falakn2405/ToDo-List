@@ -5,8 +5,6 @@ import colors from './Colors';
 import TodoList from './components/ToDoList';
 import AddListModal from './components/AddListModal';
 import Fire from './Fire';
-import { GestureHandlerRootView } from 'react-native-gesture-handler';
-import { LinearGradient } from 'expo-linear-gradient';
 
 export default class App extends React.Component {
   state ={ 
