@@ -60,11 +60,12 @@ export default class App extends React.Component {
     }
     return (
       <GestureHandlerRootView style={{flex:1}}>
-        <View style={styles.container}>
+        <View style={styles.container}> 
+
           <Modal animationType='slide' visible={this.state.addTodoVisible} onRequestClose={() => this.toggleAddTodoModal()}>
             <AddListModal closeModal={() => this.toggleAddTodoModal()} addList={this.addList} />
           </Modal>
-          
+
           <View style={{ flexDirection: 'row' }}>
             <View style={styles.divider} />
             <Text style={styles.title}>
@@ -90,6 +91,7 @@ export default class App extends React.Component {
               keyboardShouldPersistTaps='always'
             />
           </View>
+
         </View>
       </GestureHandlerRootView>
     );
