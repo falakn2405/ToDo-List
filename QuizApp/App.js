@@ -11,7 +11,7 @@ export default function App() {
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen name="QuizApp" component={QuizApp} />
-        <Stack.Screen name="Playground" component={Playground} />
+        <Stack.Screen name="SkillTest" component={Playground} />
       </Stack.Navigator>
     </NavigationContainer>
   );

@@ -12,27 +12,27 @@ const QuizApp = () => {
         >
             <View style={styles.catContainer}>
                 <TouchableOpacity style={styles.category}
-                    onPress={() => navigation.navigate('Playground', {category: 'world-affairs'})}>
+                    onPress={() => navigation.navigate('SkillTest', {category: 'world-affairs'})}>
                         <Text style={styles.catTitle}>World Affairs</Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.category}
-                    onPress={() => navigation.navigate('Playground', {category: 'science'})}>
+                    onPress={() => navigation.navigate('SkillTest', {category: 'science'})}>
                         <Text style={styles.catTitle}>Science & Technology</Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.category}
-                    onPress={() => navigation.navigate('Playground', {category: 'technology'})}>
+                    onPress={() => navigation.navigate('SkillTest', {category: 'technology'})}>
                         <Text style={styles.catTitle}>Computer Science</Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.category}
-                    onPress={() => navigation.navigate('Playground', {category: 'sports'})}>
+                    onPress={() => navigation.navigate('SkillTest', {category: 'sports'})}>
                         <Text style={styles.catTitle}>Sports</Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.category}
-                    onPress={() => navigation.navigate('Playground', {category: 'literature'})}>
+                    onPress={() => navigation.navigate('SkillTest', {category: 'literature'})}>
                         <Text style={styles.catTitle}>Literature</Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.category}
-                    onPress={() => navigation.navigate('Playground', {category: 'movies'})}>
+                    onPress={() => navigation.navigate('SkillTest', {category: 'movies'})}>
                         <Text style={styles.catTitle}>Movies</Text>
                 </TouchableOpacity>
             </View>
