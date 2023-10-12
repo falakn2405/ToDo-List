@@ -1,12 +1,15 @@
 import React from 'react'
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native'
 import { useNavigation } from '@react-navigation/native'
+import { LinearGradient } from 'expo-linear-gradient'
 
 const QuizApp = () => {
     const navigation = useNavigation();
 
     return (
-        <View style={styles.container}>
+        <LinearGradient colors={['#F3DBCE', '#FFCDB2', '#FFB4A2', '#E5989B', '#B5838D', '#6D6875' ]} 
+            style={styles.container}
+        >
             <View style={styles.catContainer}>
                 <TouchableOpacity style={styles.category}
                     onPress={() => navigation.navigate('Playground', {category: 'world-affairs'})}>
@@ -33,8 +36,8 @@ const QuizApp = () => {
                         <Text style={styles.catTitle}>Movies</Text>
                 </TouchableOpacity>
             </View>
-        </View>
-  )
+        </LinearGradient>
+    )
 }
 
 export default QuizApp
@@ -42,7 +45,6 @@ export default QuizApp
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#fff',
         alignItems: 'center',
         justifyContent: 'center',
     },
@@ -58,7 +60,6 @@ const styles = StyleSheet.create({
         height: 150,
         margin: 10,
         borderRadius: 10,
-        backgroundColor: '#FFFFFF',
         shadowColor: '#000000',
         shadowOpacity: 0.3,
         shadowRadius: 5,
