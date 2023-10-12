@@ -10,8 +10,8 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen name="QuizApp" component={QuizApp} />
-        <Stack.Screen name="SkillTest" component={Playground} />
+        <Stack.Screen name="QuizApp" component={QuizApp} options={{headerStyle: {backgroundColor: '#FFB4A2'}}}/>
+        <Stack.Screen name="SkillTest" component={Playground} options={{headerStyle: {backgroundColor: '#01ab9d'}}}/>
       </Stack.Navigator>
     </NavigationContainer>
   );
