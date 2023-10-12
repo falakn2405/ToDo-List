@@ -36,13 +36,13 @@ export default class AddListModal extends React.Component {
                         <AntDesign name="close" size={30} color={colors.black} />
                     </TouchableOpacity>
 
-                    <View style={{ alignItems: 'stretch', marginHorizontal: 32}}>
+                    <View style={{ alignItems: 'stretch', marginHorizontal: 38}}>
                         <Text style={styles.title}>Create Todo List</Text>
                         
                         <TextInput style={styles.input} placeholder="List Name?" 
                             onChangeText={text => this.setState({name:text})} />
 
-                        <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginTop: 12 }}>
+                        <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginTop: 18 }}>
                             {this.renderColors()}</View>
 
                         <TouchableOpacity style={[styles.create, { backgroundColor: this.state.color }]}
@@ -71,16 +71,15 @@ const styles = StyleSheet.create({
         fontWeight: '900',
         color: colors.black,
         alignSelf: 'center',
-        marginBottom: 16,
+        marginBottom: 35,
     },
     input: {
         borderWidth: 3,
         borderColor: colors.blue,
         borderRadius: 6,
         height: 50,
-        marginTop: 8,
-        paddingHorizontal: 16,
-        fontSize: 18,
+        paddingHorizontal: 25,
+        fontSize: 20,
         fontWeight: '400'
     },
     create:{
@@ -91,6 +90,7 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
     },
     colorSelect: {
+        paddingTop: 15,
         width: 30,
         height: 30,
         borderRadius: 4,
