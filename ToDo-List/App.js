@@ -6,7 +6,7 @@ import TodoList from './components/ToDoList';
 import AddListModal from './components/AddListModal';
 import Fire from './Fire';
 
-export default class App extends React.Component {
+export default class App extends React.PureComponent {
   state ={ 
     addTodoVisible: false,
     lists: [],

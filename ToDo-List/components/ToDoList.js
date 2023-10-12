@@ -3,7 +3,7 @@ import { View, Text, StyleSheet, TouchableOpacity, Modal } from "react-native";
 import colors from '../Colors'
 import TodoModal from "./TodoModal";
 
-export default class ToDoList extends React.Component {
+export default class ToDoList extends React.PureComponent {
     state = { showListVisible: false }
     toggleListModel() {
         this.setState({ showListVisible: !this.state.showListVisible });
